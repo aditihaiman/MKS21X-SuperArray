@@ -18,10 +18,6 @@
      return size;
    }
 
-   public int length() {
-     return data.length;
-   }
-
    public boolean isEmpty() {
      return size == 0;
    }
@@ -44,7 +40,7 @@
      return output.substring(0, output.length()-2) + "]";
    }
 
-   public String toStringDebug() {
+   public String toStringDebug() { //test!!!!
      if (size == 0) return "[]";
      String output = "[";
      for (int x = 0; x < this.data.length; x++) {
@@ -67,6 +63,17 @@
      }
    }
 
+   public boolean contains(String target) {
+     boolean output = false;
+     for (int x = 0; x < this.size; x++) {
+       if (this.data[x] == target) output = true;
+     }
+     return output;
+   }
+
+   public int indexOf(String target) {
+     
+   }
 
 
 
