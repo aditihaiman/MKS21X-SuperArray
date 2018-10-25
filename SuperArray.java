@@ -98,7 +98,7 @@
    }
 
    public int lastIndexOf(String target) {
-     for (int x = this.size - 1; x >= 0; x++) {
+     for (int x = this.size-1; x >= 0; x-=1) {
        if (this.data[x].equals(target)) {return x;}
      }
      return -1;

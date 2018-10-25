@@ -49,6 +49,21 @@ public class Driver {
     System.out.println(list.contains("hello"));
     System.out.println(list.contains(null));
 
+    System.out.println();
+    System.out.println("Testing for indexOf and lastIndexOf:");
+
+    System.out.println("\nShould print 10: ");
+    System.out.println(list.indexOf("bye"));
+    System.out.println("\n Should print 0: ");
+    System.out.println(list.indexOf("hi"));
+    System.out.println("\n Should print -1: ");
+    System.out.println(list.indexOf("fish"));
+    System.out.println("\n Should print 24: ");
+    System.out.println(list.lastIndexOf("hi"));
+    System.out.println("\n Should print 10: ");
+    System.out.println(list.lastIndexOf("bye"));
+
+
 /*    for (int x = 0; x < 100; x++) {
       list.add("hi");
     }
