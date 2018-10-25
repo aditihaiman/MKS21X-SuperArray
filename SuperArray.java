@@ -54,12 +54,19 @@
    }
 
    public String get(int index) {
-     if (index < 0 || index >= size) return null;
+     if (index < 0 || index >= size) {
+       System.out.println("Error: Index out of range");
+       return null;
+
+     }
      else {return this.data[index];}
    }
 
    public String set(int index, String item) {
-     if (index < 0 || index >= size) return null;
+     if (index < 0 || index >= size) {
+       System.out.println("Error: Index out of range");
+       return null;
+     }
      else {
        String old = this.data[index];
        this.data[index] = item;
@@ -97,7 +104,12 @@
      return -1;
    }
 
-   
+   public void add(int index, String item) {
+     if (index < 0 || index > this.size) {
+       System.out.println("Error: Index out of range");
+     }
+     
+   }
 
 
 
