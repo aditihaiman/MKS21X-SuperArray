@@ -108,10 +108,38 @@
      if (index < 0 || index > this.size) {
        System.out.println("Error: Index out of range");
      }
-     for (int x = index - 1; x < this.data.length; x++) {
-       String temp = this.data[x+1];
-       //this.data[x] = 
+     String[] temp = new String[this.data.length+1];
+     for (int x = 0; x < this.data.length; x++) {
+       if (x == index) {
+         temp[x] = item;
+         x++;
+       }
+       else {
+         temp[x] = this.data[x];
+       }
      }
+     this.data = temp;
+   }
+
+   public String remove(int index) {
+     if (index < 0 || index >= size) {
+       System.out.println("Error: Index out of range");
+     }
+     String output = this.data[index];
+     String[] temp = new String[this.data.length-1];
+     for (int x = 0; x < this.data.length; x++) {
+       if (x == index) x++;
+       temp[x] = this.data[x];
+     }
+     this.data = temp;
+     return output;
+   }
+
+   public boolean remove(String item) {
+    // if (!this.contains()) return false;
+
+
+    return true;
    }
 
 
