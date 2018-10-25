@@ -136,10 +136,14 @@
    }
 
    public boolean remove(String item) {
-    // if (!this.contains()) return false;
-
-
-    return true;
+     if (!this.contains(item)) return false;
+     String[] temp = new String[this.data.length-1];
+     for (int x = 0; x < this.data.length; x++) {
+       if (temp[x].equals(item)) x++;
+       temp[x] = this.data[x];
+     }
+     this.data = temp;
+     return true;
    }
 
 
