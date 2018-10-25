@@ -108,7 +108,10 @@
      if (index < 0 || index > this.size) {
        System.out.println("Error: Index out of range");
      }
-     
+     for (int x = index - 1; x < this.data.length; x++) {
+       String temp = this.data[x+1];
+       //this.data[x] = 
+     }
    }
 
 
