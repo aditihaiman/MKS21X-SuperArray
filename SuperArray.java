@@ -22,10 +22,10 @@
      return size == 0;
    }
 
-   public boolean add(String item) { // should have return type boolean???
-/*     if (this.size > this.data.length) {
+   public boolean add(String item) {
+     if (this.size >= this.data.length) {
        this.resize();
-     } */
+     }
       this.data[this.size] = item;
       this.size++;
       return true;
@@ -40,11 +40,15 @@
      return output.substring(0, output.length()-2) + "]";
    }
 
-   public String toStringDebug() { //test!!!!
-     if (size == 0) return "[]";
+   public String toStringDebug() {
      String output = "[";
      for (int x = 0; x < this.data.length; x++) {
-       output += this.data[x] + ", ";
+       if (this.data[x] != null) {
+         output += this.data[x] + ", ";
+       }
+       else {
+         output += "null, ";
+       }
      }
      return output.substring(0, output.length()-2) + "]";
    }
@@ -63,6 +67,14 @@
      }
    }
 
+   private void resize() {
+     String[] temp = new String[this.size * 2 + 1];
+     for (int x = 0; x < this.size; x++) {
+       temp[x] = this.data[x];
+     }
+     this.data = temp;
+   }
+
    public boolean contains(String target) {
      boolean output = false;
      for (int x = 0; x < this.size; x++) {
@@ -72,8 +84,20 @@
    }
 
    public int indexOf(String target) {
-     
+     for (int x = 0; x < this.size; x++) {
+       if (this.data[x].equals(target)) {return x;}
+     }
+     return -1;
    }
+
+   public int lastIndexOf(String target) {
+     for (int x = this.size - 1; x >= 0; x++) {
+       if (this.data[x].equals(target)) {return x;}
+     }
+     return -1;
+   }
+
+   
 
 
 
