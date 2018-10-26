@@ -112,7 +112,6 @@
      for (int x = 0; x < this.data.length; x++) {
        if (x == index) {
          temp[x] = item;
-         x++;
        }
        else {
          temp[x] = this.data[x];
@@ -126,7 +125,7 @@
        System.out.println("Error: Index out of range");
      }
      String output = this.data[index];
-     String[] temp = new String[this.data.length-1];
+     String[] temp = new String[this.size-1];
      for (int x = 0; x < this.data.length; x++) {
        if (x == index) x++;
        temp[x] = this.data[x];
