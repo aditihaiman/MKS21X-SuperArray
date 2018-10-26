@@ -2,7 +2,7 @@ public class Driver {
   public static void main(String[] args) {
     SuperArray list = new SuperArray();
 
-    System.out.println("TESTING PHASE 2:");
+    System.out.println("TESTING PHASE 1:");
 
     System.out.println("Testing toString");
     System.out.println("\nShould print []:");
@@ -51,6 +51,7 @@ public class Driver {
     System.out.println("\n--------------------------------------------- \n");
     System.out.println("TESTS FOR PHASE 3");
 
+    list.clear();
     for (int x = 0; x < 25; x++) {
         list.add("hi");
       }
@@ -66,6 +67,7 @@ public class Driver {
 
     System.out.println();
     System.out.println("Testing for indexOf and lastIndexOf:");
+
 
     System.out.println("\nShould print 10: ");
     System.out.println(list.indexOf("bye"));
@@ -84,10 +86,17 @@ public class Driver {
     System.out.println("Should print [hi, hi,..., bye, yes, hi, hi...]:");
     list.add(11, "yes");
     System.out.println(list);
+    System.out.println("\nShould print size as 25: ");
+    System.out.println(list.size());
+
 
     System.out.println("\n Testing remove by index:");
     list.remove(11);
+    System.out.println("\nShould print [hi, hi, ..., bye, hi, hi...]: ");
     System.out.println(list);
+    System.out.println("\nShould print size as 24:");
+    System.out.println(list.size());
+
 
     System.out.println("\n-------------------------------------------\n");
 
@@ -104,8 +113,21 @@ public class Driver {
 
 
 
+    System.out.println();
+    System.out.println();
+    System.out.println();
 
+    SuperArray list2 = new SuperArray();
+    for (int x = 0; x < 10; x++) {list2.add("hi");}
+
+    System.out.println(list2);
+    System.out.println(list2.size());
+    list2.add(2, "bye");
+    System.out.println(list2);
+    System.out.println(list2.size());
+
+    list2.remove(2);
+    System.out.println(list2);
 
   }
-
 }

@@ -113,8 +113,8 @@
      if (index < 0 || index > this.size) {
        System.out.println("Error: Index out of range");
      }
-     if (index == this.size) this.add(item);
      else{
+       if (index == this.size) this.add(item);
        SuperArray temp = new SuperArray(this.data.length+1);
        for (int x = 0; x < this.data.length; x++) {
          if (x == index) {
@@ -128,40 +128,33 @@
     }
 
 
-
    public String remove(int index) {
      if (index < 0 || index >= size) {
        System.out.println("Error: Index out of range");
+       return null;
      }
-     String output = this.data[index];
-     int idx = 0;
-     String[] temp = new String[this.data.length-1];
-     for (int x = 0; x < this.data.length-2; x++) {
-       if (x == index) {
-         x++;
-         idx = 1;
+     else {
+       String output = this.data[index];
+       int idx = 0;
+       String[] temp = new String[this.data.length-1];
+       for (int x = 0; x < temp.length; x++) {
+         if (x == index) idx++;
+         temp[x] = this.data[idx];
+         idx++;
        }
-       temp[x-idx] = this.data[x];
+       this.size -= 1;
+       this.data = temp;
+       return output;
      }
-     this.data = temp;
-     return output;
+
    }
 
    public boolean remove(String item) {
      if (!this.contains(item)) return false;
-     String[] temp = new String[this.data.length-1];
-     for (int x = 0; x < this.data.length; x++) {
-       if (temp[x].equals(item)) x++;
-       temp[x] = this.data[x];
+     else {
+       this.remove(this.indexOf(item));
      }
-     this.data = temp;
      return true;
    }
-
-
-
-
-
-
 
  }
