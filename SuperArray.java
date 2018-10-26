@@ -7,6 +7,11 @@
      size = 0;
    }
 
+   public SuperArray(int len) {
+     size = 0;
+     data = new String[len];
+   }
+
    public void clear() {
      size = 0;
      for (int x = 0; x < data.length; x++) {
@@ -108,27 +113,35 @@
      if (index < 0 || index > this.size) {
        System.out.println("Error: Index out of range");
      }
-     String[] temp = new String[this.data.length+1];
-     for (int x = 0; x < this.data.length; x++) {
-       if (x == index) {
-         temp[x] = item;
-       }
-       else {
-         temp[x] = this.data[x];
-       }
-     }
-     this.data = temp;
-   }
+     if (index == this.size) this.add(item);
+     else{
+       SuperArray temp = new SuperArray(this.data.length+1);
+       for (int x = 0; x < this.data.length; x++) {
+         if (x == index) {
+           temp.add(item);
+         }
+          temp.add(this.data[x]);
+        }
+        this.add("hi");
+        this.data = temp.data;
+      }
+    }
+
+
 
    public String remove(int index) {
      if (index < 0 || index >= size) {
        System.out.println("Error: Index out of range");
      }
      String output = this.data[index];
-     String[] temp = new String[this.size-1];
-     for (int x = 0; x < this.data.length; x++) {
-       if (x == index) x++;
-       temp[x] = this.data[x];
+     int idx = 0;
+     String[] temp = new String[this.data.length-1];
+     for (int x = 0; x < this.data.length-2; x++) {
+       if (x == index) {
+         x++;
+         idx = 1;
+       }
+       temp[x-idx] = this.data[x];
      }
      this.data = temp;
      return output;
