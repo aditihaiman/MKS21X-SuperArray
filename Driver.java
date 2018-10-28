@@ -145,7 +145,7 @@ public class Driver {
 
     /**************************************************************************/
 
-    System.out.println("SA's status:                       " + SA.toStringDebug());
+    System.out.println("SA's status: \n" + SA.toStringDebug());
     System.out.println("SA is empty (should return true):  " + SA.isEmpty());
     System.out.println("SA's size:                         " + SA.size());
 
@@ -164,19 +164,18 @@ public class Driver {
     /**************************************************************************/
 
     SA.set(1, "42");
-    System.out.println("Setting SA[1] to \"42\"...");
-    System.out.println("\n");
-    System.out.println("Checking set value:                " + SA.get(1) + "\n\n");
+    System.out.println("\nSetting SA[1] to \"42\"...");
+    System.out.println("\nChecking set value:                " + SA.get(1) + "\n\n");
 
     System.out.println("Trying to set a value an index that is out of bounds");
     //SA.set(4,"Celestial Elixir is the best song"); //Comment in this line to check to see if it throws an error
 
     /**************************************************************************/
 
-    for (int i = SA.size(); i < 15; i++) {
+    for (int i = SA.size(); i < 19; i++) {
       SA.add("" + i);
     }
-    System.out.println("Filling empty slots of SA with integers...");
+    System.out.println("\nFilling empty slots of SA with integers...");
     System.out.println("Full status of SA:                 " + SA.toStringDebug() + "\n");
     System.out.println("Adding \"Dream Theater\" to SA to test resize...");
     SA.add("Dream Theater");
@@ -189,12 +188,12 @@ public class Driver {
     System.out.println("Checking SA for \"Kendrick Lamar\"    " + SA.contains("Kendrick Lamar"));
     System.out.println("This should return false!\n\n");
     System.out.println("Trying to get a value at an index that is out of bounds");
-    //SA.get(35);                       //Comment in this line to check to see if it throws an error
+    //System.out.println(SA.get(35));                 //Comment in this line to check to see if it throws an error
 
     /**************************************************************************/
 
     SA.add(5, "Thank You Scientist");
-    System.out.println("Adding \"Thank You Scientist\" to index 5...");
+    System.out.println("\nAdding \"Thank You Scientist\" to index 5...");
     System.out.println("SA status:                         " + SA.toString());
     SA.remove(6);
     System.out.println("\nRemoving the number \"5\" from index 6...");

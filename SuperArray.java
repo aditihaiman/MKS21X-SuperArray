@@ -40,7 +40,7 @@
      if (size == 0) return "[]";
      String output = "[";
      for (int x = 0; x < this.size; x++) {
-       output += this.data[x] + ", ";
+       if (this.data[x] != null) output += this.data[x] + ", ";
      }
      return output.substring(0, output.length()-2) + "]";
    }
@@ -111,14 +111,14 @@
      if (index < 0 || index > this.size) {
        throw new IndexOutOfBoundsException();
      }
+     if (index == this.size) this.add(item);
      else{
-       if (index == this.size) this.add(item);
        SuperArray temp = new SuperArray(this.data.length+1);
        for (int x = 0; x < this.data.length; x++) {
          if (x == index) {
            temp.add(item);
          }
-          temp.add(this.data[x]);
+         temp.add(this.data[x]);  
         }
         this.add("hi");
         this.data = temp.data;
