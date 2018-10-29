@@ -134,7 +134,7 @@
 
 public class Driver {
   public static void main(String[] args) {
-    try {
+  //  try {
       System.out.print("\n\n\n\n");
 
       /**************************************************************************/
@@ -216,8 +216,19 @@ public class Driver {
       System.out.println("Clearing SA");
       SA.clear();
       System.out.println(SA.toString());
-    }
-    catch(IndexOutOfBoundsException e) {
+  //  }
+
+    System.out.println("––––––––––––––––––––––");
+    System.out.println("Testing Exceptions:");
+
+    SuperArray list = new SuperArray(2);
+
+    try {
+      //list.add(4, "hi");
+      //list.remove(5);
+      //list.get(5);
+      list.set(4, "hello");
+    } catch(IndexOutOfBoundsException e) {
       System.out.println("Caught a problem in the main");
     }
   }

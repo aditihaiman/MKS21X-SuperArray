@@ -8,6 +8,7 @@
    }
 
    public SuperArray(int len) {
+     if  (len < 0) throw new IllegalArgumentException();
      size = 0;
      data = new String[len];
    }
@@ -46,6 +47,7 @@
    }
 
    public String toStringDebug() {
+     if (this.data.length ==0) return "[]";
      String output = "[";
      for (int x = 0; x < this.data.length; x++) {
        if (this.data[x] != null) {
@@ -118,7 +120,7 @@
          if (x == index) {
            temp.add(item);
          }
-         temp.add(this.data[x]);  
+         temp.add(this.data[x]);
         }
         this.add("hi");
         this.data = temp.data;
