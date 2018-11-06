@@ -90,7 +90,7 @@
    public boolean contains(String target) {
      boolean output = false;
      for (int x = 0; x < this.size; x++) {
-       if (this.data[x] == target) output = true;
+       if (this.data[x].equals(target)) output = true;
      }
      return output;
    }
@@ -149,11 +149,14 @@
    }
 
    public boolean remove(String item) {
-     if (!this.contains(item)) return false;
-     else {
-       this.remove(this.indexOf(item));
+     if (this.contains(item)) {
+       int x = this.indexOf(item);
+       this.remove(x);
+       return true;
      }
-     return true;
+     else {
+       return false;
+     }
    }
 
  }
