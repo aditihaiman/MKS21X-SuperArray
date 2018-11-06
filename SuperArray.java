@@ -63,7 +63,6 @@
    public String get(int index) {
      if (index < 0 || index >= size) {
        throw new IndexOutOfBoundsException();
-
      }
      else {return this.data[index];}
    }
