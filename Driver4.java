@@ -46,6 +46,20 @@ public class Driver4 {
     System.out.println(arr.set(3, "hi"));
     System.out.println(arr);
 
+    arr.clear();
+    System.out.println();
+    for (int x = 0; x < 600; x++){
+      arr.add("hi");
+    }
+
+    System.out.println(arr.size());
+    for (int x = 0; x < 600; x++) {
+      if (!arr.set(x, "bye").equals("hi")) {
+        System.out.println("wrong");
+      }
+    }
+
+    System.out.println(arr.size());
 
   }
 
