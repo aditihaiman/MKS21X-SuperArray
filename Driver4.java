@@ -38,6 +38,15 @@ public class Driver4 {
     System.out.println(arr.remove("6"));
     System.out.println(arr);
 
+    System.out.println("––––––––––––––––––");
+
+    arr.add(5, "6");
+    System.out.println(arr);
+
+    System.out.println(arr.set(3, "hi"));
+    System.out.println(arr);
+
+
   }
 
 }
