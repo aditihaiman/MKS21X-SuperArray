@@ -45,6 +45,13 @@ public class Driver4 {
 
     System.out.println(arr.set(3, "hi"));
     System.out.println(arr);
+    System.out.println(arr.size());
+    try {
+      System.out.println(arr.set(10, "hi"));
+    }
+    catch (Exception e) {
+      System.out.println(e);
+    }
 
     arr.clear();
     System.out.println();
