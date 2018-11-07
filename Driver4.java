@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Driver4 {
   public static void main(String[] args) {
     SuperArray arr = new SuperArray();
@@ -67,6 +68,28 @@ public class Driver4 {
     }
 
     System.out.println(arr.size());
+
+    System.out.println("–––––––––––––––––");
+    ArrayList<String> key = new ArrayList<String>();
+    SuperArray ans = new SuperArray();
+    for(int i = 0; i < 1000;i++) {
+        ans.add(""+i);
+        key.add(""+i);
+        ans.add(0,""+i);
+        key.add(0,""+i);
+      }
+
+    for (int i = 0; i < 1000; i++) {
+      if (!ans.get(i).equals(key.get(i))) {
+        System.out.println("WRONG");
+      }
+    }
+
+    int count = 0;
+      for(int i = 0; i < 100 && ans.set(i,"X"+i).equals(key.set(i,"X"+i));i++){
+        count++;
+      }
+    System.out.println(count);
 
   }
 
